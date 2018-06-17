@@ -14,7 +14,7 @@ public class RunnerJsp extends HttpServlet {
         // The resulting Web page will be sent back via the
         // I/O stream that response variable contains
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("studentTest.jsp").forward(request, response);
 
 //        PrintWriter out = response.getWriter();
 //        out.println("Hello from FindBooks");
