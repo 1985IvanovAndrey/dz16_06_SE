@@ -26,12 +26,12 @@
 %>
 <body>
 <h2>Таблица всех студентов:</h2>
-<table border="2">
-    <tr>
-        <td>name</td>
-        <td>sec_name</td>
-        <td>sex</td>
-        <td>phone</td>
+<table border="4" cellspacing="5" cellpadding="5">
+    <tr align="center" c>
+        <td> <font color="#FF0000">name</font></td>
+        <td><font color="#FF0000">sec_name</font></td>
+        <td><font color="#FF0000">sex</font></td>
+        <td><font color="#FF0000">phone</font></td>
     </tr>
     <c:forEach var="studentTest" items="${studentsListNew}">
         <tr>
@@ -43,12 +43,12 @@
         </tr>
 </table>
 <h2>Таблица студентов только sex="MAN":</h2>
-<table border="2">
-    <tr>
-        <td>name</td>
-        <td>sec_name</td>
-        <td>sex</td>
-        <td>phone</td>
+<table border="4" cellspacing="5" cellpadding="5">
+    <tr align="center">
+        <td> <font color="#FF0000">name</font></td>
+        <td><font color="#FF0000">sec_name</font></td>
+        <td><font color="#FF0000">sex</font></td>
+        <td><font color="#FF0000">phone</font></td>
     </tr>
     <c:forEach var="studentTest" items="${studentsListNew}">
         <c:if test="${studentTest.sex.equals(\"MAN\")}">
@@ -61,5 +61,6 @@
             </c:forEach>
             </tr>
             </table>
+<b><i><h4><a href="index.jsp">Возврат на главную страницу</a> </h4></i></b>
 </body>
 </html>
