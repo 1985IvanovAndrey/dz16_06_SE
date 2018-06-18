@@ -69,45 +69,67 @@
     <input type="radio" name="chooseSex" value="WOMAN"> WOMAN
     <input type="submit" value="Submit"/></form>
 
-<%--<c:forEach var="studentTest" items="${studentsListNew}">--%>
-<%--<c:if test="${studentTest.sex.equals(request.getParam(\"chooseSex\"))}">--%>
+<c:if test="${param.chooseSex.equals(\"MAN\")||param.chooseSex.equals(\"WOMAN\")}">
+    <table border="4" cellspacing="5" cellpadding="5">
+        <tr align="center" c>
+            <td><font color="#FF0000">name</font></td>
+            <td><font color="#FF0000">sec_name</font></td>
+            <td><font color="#FF0000">sex</font></td>
+            <td><font color="#FF0000">phone</font></td>
+        </tr>
+    <%--</table>--%>
+</c:if>
+<c:forEach var="studentTest" items="${studentsListNew}">
+<c:if test="${studentTest.sex.equals(param.chooseSex)}">
 <%--<table border="4" cellspacing="5" cellpadding="5">--%>
-    <%--<tr align="center">--%>
-        <%--<td><font color="#FF0000">name</font></td>--%>
-        <%--<td><font color="#FF0000">sec_name</font></td>--%>
-        <%--<td><font color="#FF0000">sex</font></td>--%>
-        <%--<td><font color="#FF0000">phone</font></td>--%>
-    <%--</tr>--%>
-    <% boolean flag=true;
-        for (StudentTest s : studentsListNew) {
-            if (s.getSex().equals(request.getParameter("chooseSex"))) {
-                if (flag) {
-                    out.print("<br/> <table border = " + "4" + " cellspacing = " + "5" + " cellpadding = " + "5" + ">\n" +
-                            "<tr align="+"center"+">\n" +
-                            "<td><font color=\"#FF0000\">name</font></td>\n" +
-                            "<td><font color=\"#FF0000\">sec_name</font></td>\n" +
-                            "<td><font color=\"#FF0000\">sex</font></td>\n" +
-                            "<td><font color=\"#FF0000\">phone</font>\n" +
-                            "</tr>");
-                    flag = false;
-                }
-                out.print("<tr>");
-                out.print("<td>" + s.getName() + "</td>");
-                out.print("<td>" + s.getSecName() + "</td>");
-                out.print("<td>" + s.getSex() + "</td>");
-                out.print("<td>" + s.getPhone() + "</td>");
-                out.print("</tr>");
-            }
-        }
-    %>
-    <%--<tr>--%>
-    <%--<td>${studentTest.name}</td>--%>
-    <%--<td>${studentTest.secName}</td>--%>
-    <%--<td>${studentTest.sex}</td>--%>
-    <%--<td>${studentTest.phone}</td>--%>
-    <%--&lt;%&ndash;</c:if>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
-    <%--</tr>--%>
+    <tr>
+        <td>${studentTest.name}</td>
+        <td>${studentTest.secName}</td>
+        <td>${studentTest.sex}</td>
+        <td>${studentTest.phone}</td>
+    </tr>
+    </c:if>
+    </c:forEach>
+</table>
+
+
+<%--<table border="4" cellspacing="5" cellpadding="5">--%>
+<%--<tr align="center">--%>
+<%--<td><font color="#FF0000">name</font></td>--%>
+<%--<td><font color="#FF0000">sec_name</font></td>--%>
+<%--<td><font color="#FF0000">sex</font></td>--%>
+<%--<td><font color="#FF0000">phone</font></td>--%>
+<%--</tr>--%>
+<%--<% boolean flag = true;--%>
+    <%--for (StudentTest s : studentsListNew) {--%>
+        <%--if (s.getSex().equals(request.getParameter("chooseSex"))) {--%>
+            <%--if (flag) {--%>
+                <%--out.print("<br/> <table border = " + "4" + " cellspacing = " + "5" + " cellpadding = " + "5" + ">\n" +--%>
+                        <%--"<tr align=" + "center" + ">\n" +--%>
+                        <%--"<td><font color=\"#FF0000\">name</font></td>\n" +--%>
+                        <%--"<td><font color=\"#FF0000\">sec_name</font></td>\n" +--%>
+                        <%--"<td><font color=\"#FF0000\">sex</font></td>\n" +--%>
+                        <%--"<td><font color=\"#FF0000\">phone</font>\n" +--%>
+                        <%--"</tr>");--%>
+                <%--flag = false;--%>
+            <%--}--%>
+            <%--out.print("<tr>");--%>
+            <%--out.print("<td>" + s.getName() + "</td>");--%>
+            <%--out.print("<td>" + s.getSecName() + "</td>");--%>
+            <%--out.print("<td>" + s.getSex() + "</td>");--%>
+            <%--out.print("<td>" + s.getPhone() + "</td>");--%>
+            <%--out.print("</tr>");--%>
+        <%--}--%>
+    <%--}--%>
+<%--%>--%>
+<%--<tr>--%>
+<%--<td>${studentTest.name}</td>--%>
+<%--<td>${studentTest.secName}</td>--%>
+<%--<td>${studentTest.sex}</td>--%>
+<%--<td>${studentTest.phone}</td>--%>
+<%--&lt;%&ndash;</c:if>&ndash;%&gt;--%>
+<%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
+<%--</tr>--%>
 <%--</table>--%>
 <%--</c:if>--%>
 <%--</c:forEach>--%>
